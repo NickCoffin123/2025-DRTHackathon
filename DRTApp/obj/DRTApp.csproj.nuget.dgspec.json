@@ -91,7 +91,11 @@
             },
             "protobuf-net": {
               "target": "Package",
+<<<<<<< HEAD
               "version": "[2.4.0, )"
+=======
+              "version": "[3.2.19, )"
+>>>>>>> be313355e608d843c8d4775e300de01306ffc072
             }
           },
           "imports": [
@@ -142,7 +146,11 @@
             },
             "protobuf-net": {
               "target": "Package",
+<<<<<<< HEAD
               "version": "[2.4.0, )"
+=======
+              "version": "[3.2.19, )"
+>>>>>>> be313355e608d843c8d4775e300de01306ffc072
             }
           },
           "imports": [
@@ -193,7 +201,11 @@
             },
             "protobuf-net": {
               "target": "Package",
+<<<<<<< HEAD
               "version": "[2.4.0, )"
+=======
+              "version": "[3.2.19, )"
+>>>>>>> be313355e608d843c8d4775e300de01306ffc072
             }
           },
           "imports": [
@@ -235,11 +247,19 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
+<<<<<<< HEAD
               "version": "[9.0.0, )"
             },
             "protobuf-net": {
               "target": "Package",
               "version": "[2.4.0, )"
+=======
+              "version": "[9.0.14, )"
+            },
+            "protobuf-net": {
+              "target": "Package",
+              "version": "[3.2.19, )"
+>>>>>>> be313355e608d843c8d4775e300de01306ffc072
             }
           },
           "imports": [
