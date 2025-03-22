@@ -150,5 +150,43 @@ namespace DRTApp.Classes
                 Instance.Trips.Add(trip);
             }
         }
+
+        private Trip GetTrip(string tripID)
+        {
+            foreach (Trip trip in Trips)
+            {
+                if (trip.tripID == tripID)
+                {
+                    return trip;
+                }
+            }
+
+            return new Trip();
+        }
+
+        private List<Trip> GetNextThreeTripsByStopID(string stopID)
+        {
+            DateTime time = DateTime.Now;
+            List<StopTime> stopTimes = new();
+            List<Trip> trips = new();
+
+            foreach (StopTime stopTime in StopTimes)
+            {
+                DateTime targetTime = DateTime.Today.Add(TimeSpan.Parse(stopTime.arrivalTime));
+                bool future = targetTime > time;
+
+                if (!future) continue;
+                else if (stopTime.stopID == stopID) stopTimes.Add(stopTime);
+            }
+
+            stopTimes = stopTimes.OrderBy(st => DateTime.Parse(st.arrivalTime)).ToList();
+            for (int i = 0; i < 3; i++)
+            {
+                Trip trip = GetTrip(stopTimes[i].tripID);
+                if (trip.tripID != null) trips.Add(trip);
+            }
+
+            return trips;
+        }
     }
 }

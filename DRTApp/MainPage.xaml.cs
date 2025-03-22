@@ -11,9 +11,6 @@ namespace DRTApp
         //CONSTS
         string TRIP_UPDATES_URL = "https://drtonline.durhamregiontransit.com/gtfsrealtime/TripUpdates";
 
-        // COMPONENTS
-        RawResourceHandler res;
-
         public MainPage()
         {
             InitializeComponent();
@@ -22,7 +19,16 @@ namespace DRTApp
         private async void OnCounterClicked(object sender, EventArgs e)
         {
             string stopID = myEntry.Text;
-            ValidateStopID(stopID);
+
+            if (ValidateStopID(stopID))
+            {
+                Debug.WriteLine("Valid ID");
+            }
+
+            else
+            {
+                Debug.WriteLine("Invalid ID");
+            }
 
         }
 
