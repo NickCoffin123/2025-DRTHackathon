@@ -5,6 +5,7 @@
         public App()
         {
             InitializeComponent();
+            Console.Write("Hello, World!");
         }
 
         protected override Window CreateWindow(IActivationState? activationState)

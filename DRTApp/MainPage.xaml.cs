@@ -1,4 +1,11 @@
-﻿namespace DRTApp
+﻿using System.Diagnostics;
+using System.Net;
+using DRTApp.Classes;
+using ProtoBuf;
+using TransitRealtime;
+using static DRTApp.Classes.GtfsService;
+
+namespace DRTApp
 {
     public partial class MainPage : ContentPage
     {
@@ -9,16 +16,18 @@
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private async void OnCounterClicked(object sender, EventArgs e)
         {
-            count++;
+            //TripUpdates();
+            await ReadRoutesFileAsync();
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+        }
+        private void TripUpdates() {
+            WebRequest req = HttpWebRequest.Create("https://drtonline.durhamregiontransit.com/gtfsrealtime/TripUpdates");
+            FeedMessage feed = Serializer.Deserialize<FeedMessage>(req.GetResponse().GetResponseStream());
+            foreach (FeedEntity entity in feed.Entities) {
+                Debug.WriteLine(entity.TripUpdate.Vehicle);
+            }
         }
     }
 

@@ -60,9 +60,36 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiAsset Remove="Resources\Raw\routes.txt" />
+	  <MauiAsset Remove="Resources\Raw\shapes.txt" />
+	  <MauiAsset Remove="Resources\Raw\stops.txt" />
+	  <MauiAsset Remove="Resources\Raw\stop_times.txt" />
+	  <MauiAsset Remove="Resources\Raw\trips.txt" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\routes.txt" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Resources\Raw\routes.txt" />
+	  <Content Include="Resources\Raw\shapes.txt" />
+	  <Content Include="Resources\Raw\stops.txt">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Resources\Raw\stop_times.txt" />
+	  <Content Include="Resources\Raw\trips.txt" />
+	  <Content Include="Resources\routes.txt">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CsvHelper" Version="33.0.1" />
 		<PackageReference Include="GtfsRealtimeBindings" Version="0.0.4" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+		<PackageReference Include="protobuf-net" Version="2.4.0" />
 	</ItemGroup>
 
 </Project>

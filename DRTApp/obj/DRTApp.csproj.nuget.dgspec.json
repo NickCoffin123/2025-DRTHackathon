@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nickc\\Desktop\\Hackathon\\DRTApp\\DRTApp.csproj": {}
+    "C:\\Hackathon\\2025-DRTHackathon\\DRTApp\\DRTApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nickc\\Desktop\\Hackathon\\DRTApp\\DRTApp.csproj": {
+    "C:\\Hackathon\\2025-DRTHackathon\\DRTApp\\DRTApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nickc\\Desktop\\Hackathon\\DRTApp\\DRTApp.csproj",
+        "projectUniqueName": "C:\\Hackathon\\2025-DRTHackathon\\DRTApp\\DRTApp.csproj",
         "projectName": "DRTApp",
-        "projectPath": "C:\\Users\\nickc\\Desktop\\Hackathon\\DRTApp\\DRTApp.csproj",
-        "packagesPath": "C:\\Users\\nickc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nickc\\Desktop\\Hackathon\\DRTApp\\obj\\",
+        "projectPath": "C:\\Hackathon\\2025-DRTHackathon\\DRTApp\\DRTApp.csproj",
+        "packagesPath": "C:\\Users\\mikem\\.nuget\\packages\\",
+        "outputPath": "C:\\Hackathon\\2025-DRTHackathon\\DRTApp\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
-          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\nickc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mikem\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -38,11 +38,11 @@
             "targetAlias": "net9.0-android",
             "projectReferences": {}
           },
-          "net9.0-ios18.2": {
+          "net9.0-ios18.0": {
             "targetAlias": "net9.0-ios",
             "projectReferences": {}
           },
-          "net9.0-maccatalyst18.2": {
+          "net9.0-maccatalyst18.0": {
             "targetAlias": "net9.0-maccatalyst",
             "projectReferences": {}
           },
@@ -59,14 +59,18 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0-android35.0": {
           "targetAlias": "net9.0-android",
           "dependencies": {
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[33.0.1, )"
+            },
             "GtfsRealtimeBindings": {
               "target": "Package",
               "version": "[0.0.4, )"
@@ -77,13 +81,17 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[9.0.14, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.3, )",
+              "version": "[9.0.0, )",
               "autoReferenced": true
+            },
+            "protobuf-net": {
+              "target": "Package",
+              "version": "[2.4.0, )"
             }
           },
           "imports": [
@@ -105,11 +113,15 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         },
-        "net9.0-ios18.2": {
+        "net9.0-ios18.0": {
           "targetAlias": "net9.0-ios",
           "dependencies": {
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[33.0.1, )"
+            },
             "GtfsRealtimeBindings": {
               "target": "Package",
               "version": "[0.0.4, )"
@@ -120,13 +132,17 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[9.0.14, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.3, )",
+              "version": "[9.0.0, )",
               "autoReferenced": true
+            },
+            "protobuf-net": {
+              "target": "Package",
+              "version": "[2.4.0, )"
             }
           },
           "imports": [
@@ -148,11 +164,15 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         },
-        "net9.0-maccatalyst18.2": {
+        "net9.0-maccatalyst18.0": {
           "targetAlias": "net9.0-maccatalyst",
           "dependencies": {
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[33.0.1, )"
+            },
             "GtfsRealtimeBindings": {
               "target": "Package",
               "version": "[0.0.4, )"
@@ -163,13 +183,17 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[9.0.14, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.3, )",
+              "version": "[9.0.0, )",
               "autoReferenced": true
+            },
+            "protobuf-net": {
+              "target": "Package",
+              "version": "[2.4.0, )"
             }
           },
           "imports": [
@@ -192,11 +216,15 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         },
         "net9.0-windows10.0.19041": {
           "targetAlias": "net9.0-windows10.0.19041.0",
           "dependencies": {
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[33.0.1, )"
+            },
             "GtfsRealtimeBindings": {
               "target": "Package",
               "version": "[0.0.4, )"
@@ -207,7 +235,11 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[9.0.14, )"
+              "version": "[9.0.0, )"
+            },
+            "protobuf-net": {
+              "target": "Package",
+              "version": "[2.4.0, )"
             }
           },
           "imports": [
@@ -224,7 +256,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.Windows.SDK.NET.Ref",
-              "version": "[10.0.19041.57, 10.0.19041.57]"
+              "version": "[10.0.19041.54, 10.0.19041.54]"
             }
           ],
           "frameworkReferences": {
@@ -235,7 +267,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
