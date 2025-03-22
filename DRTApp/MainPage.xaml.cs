@@ -1,16 +1,18 @@
 ﻿using System.Diagnostics;
 using System.Net;
-using DRTApp.Classes;
 using ProtoBuf;
 using TransitRealtime;
-using static DRTApp.Classes.GtfsService;
+using DRTApp.Classes;
 
 namespace DRTApp
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-        string vehiclePositionsURL = "https://drtonline.durhamregiontransit.com/gtfsrealtime/TripUpdates";
+        //CONSTS
+        string TRIP_UPDATES_URL = "https://drtonline.durhamregiontransit.com/gtfsrealtime/TripUpdates";
+
+        // COMPONENTS
+        RawResourceHandler res;
 
         public MainPage()
         {
@@ -19,24 +21,26 @@ namespace DRTApp
 
         private async void OnCounterClicked(object sender, EventArgs e)
         {
-            TripUpdates();
-            await ReadRoutesFileAsync();
-
-        }
-
-        private void TripUpdates() {
-            WebRequest req = HttpWebRequest.Create(vehiclePositionsURL);
-            FeedMessage feed = Serializer.Deserialize<FeedMessage>(req.GetResponse().GetResponseStream());
-            foreach (FeedEntity entity in feed.Entities)
+            if (int.TryParse(myEntry.Text, out int stopID))
             {
-                Debug.WriteLine(entity.TripUpdate.Vehicle.Id);
+                if (ValidateStopID(stopID))
+                {
+
+                }
             }
 
-            if (count == 1) CounterBtn.Text = $"Clicked {count} time";
-            else CounterBtn.Text = $"Clicked {count} times";
+            else
+            {
+                Debug.WriteLine("Invalid stop ID");
+            }
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+        }
+
+        private bool ValidateStopID(int stopID)
+        {
+            List<sStop> stops = RawResourceHandler.Instance.Stops;
+
+            return true;
         }
     }
-
 }

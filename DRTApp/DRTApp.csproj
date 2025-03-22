@@ -77,8 +77,10 @@
 	  <Content Include="Resources\Raw\stops.txt">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Content>
-	  <Content Include="Resources\Raw\stop_times.txt" />
 	  <Content Include="Resources\Raw\trips.txt" />
+	  <EmbeddedResource Include="Resources\Raw\stop_times.txt">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
 	  <Content Include="Resources\routes.txt">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Content>
