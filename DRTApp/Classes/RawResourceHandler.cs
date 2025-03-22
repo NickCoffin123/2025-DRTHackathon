@@ -43,9 +43,9 @@ namespace DRTApp.Classes
     {
         // CONSTS
         // Fixed name of the stops files we downloaded
-        private static string STOPS = "C:\\Hackathon\\2025-DRTHackathon\\DRTApp\\Resources\\stops.txt";
-        private static string STOP_TIMES = "C:\\Hackathon\\2025-DRTHackathon\\DRTApp\\Resources\\stop_times.txt";
-        private static string TRIPS = "C:\\Hackathon\\2025-DRTHackathon\\DRTApp\\Resources\\trips.txt";
+        private static string STOPS = "Resources\\raw\\stops.txt";
+        private static string STOP_TIMES = "Resources\\raw\\stop_times.txt";
+        private static string TRIPS = "Resources\\raw\\trips.txt";
 
        
 
