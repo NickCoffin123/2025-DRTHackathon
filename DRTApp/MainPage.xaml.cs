@@ -21,26 +21,23 @@ namespace DRTApp
 
         private async void OnCounterClicked(object sender, EventArgs e)
         {
-            if (int.TryParse(myEntry.Text, out int stopID))
-            {
-                if (ValidateStopID(stopID))
-                {
-
-                }
-            }
-
-            else
-            {
-                Debug.WriteLine("Invalid stop ID");
-            }
+            string stopID = myEntry.Text;
+            ValidateStopID(stopID);
 
         }
 
-        private bool ValidateStopID(int stopID)
+        private bool ValidateStopID(string stopID)
         {
             List<sStop> stops = RawResourceHandler.Instance.Stops;
+            foreach (sStop stop in stops)
+            {
+                if (stop.stopID == stopID)
+                {
+                    return true;
+                }
+            }
 
-            return true;
+            return false;
         }
     }
 }
