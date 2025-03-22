@@ -10,7 +10,6 @@ namespace DRTApp
         //CONSTS
         string TRIP_UPDATES_URL = "https://drtonline.durhamregiontransit.com/gtfsrealtime/TripUpdates";
         string VEHICLE_POSITIONS_URL = "https://drtonline.durhamregiontransit.com/gtfsrealtime/VehiclePositions";
-
         // COMPONENTS
         RawResourceHandler res;
         sStop stop;
