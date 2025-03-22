@@ -441,17 +441,52 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       },
       "Xamarin.Android.Glide/4.16.0.6": {
@@ -2843,17 +2878,52 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       },
       "Xamarin.Android.Glide/4.16.0.6": {
@@ -5245,17 +5315,52 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       },
       "Xamarin.Android.Glide/4.16.0.6": {
@@ -7647,17 +7752,52 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       },
       "Xamarin.Android.Glide/4.16.0.6": {
@@ -10049,17 +10189,52 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       },
       "Xamarin.Android.Glide/4.16.0.6": {
@@ -12451,17 +12626,52 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       },
       "Xamarin.Android.Glide/4.16.0.6": {
@@ -14826,17 +15036,52 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       }
     },
@@ -15253,17 +15498,52 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       }
     },
@@ -15680,17 +15960,52 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       }
     },
@@ -16107,17 +16422,52 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       }
     },
@@ -16534,17 +16884,52 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       }
     },
@@ -16961,17 +17346,52 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       }
     },
@@ -17388,17 +17808,52 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       }
     },
@@ -17815,17 +18270,52 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       }
     },
@@ -18242,17 +18732,52 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       }
     },
@@ -18669,17 +19194,52 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       }
     },
@@ -19096,17 +19656,52 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       }
     },
@@ -19523,17 +20118,52 @@
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       }
     },
@@ -20160,17 +20790,52 @@
           }
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       }
     },
@@ -20755,17 +21420,52 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       }
     },
@@ -21350,17 +22050,52 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       }
     },
@@ -21945,17 +22680,52 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       }
     },
@@ -22540,17 +23310,52 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       }
     },
@@ -23144,17 +23949,52 @@
           "buildTransitive/Microsoft.WindowsAppSDK.targets": {}
         }
       },
-      "protobuf-net/2.0.0.668": {
+      "protobuf-net/3.2.26": {
         "type": "package",
+        "dependencies": {
+          "protobuf-net.Core": "3.2.26"
+        },
         "compile": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
         },
         "runtime": {
-          "lib/net40/protobuf-net.dll": {
-            "related": ".pdb;.xml"
+          "lib/net6.0/protobuf-net.dll": {
+            "related": ".xml"
           }
+        }
+      },
+      "protobuf-net.Core/3.2.26": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "7.0.0"
+        },
+        "compile": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/protobuf-net.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Collections.Immutable/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
         }
       }
     }
@@ -25095,55 +25935,72 @@
         "tools/x86/GenXbf.dll"
       ]
     },
-    "protobuf-net/2.0.0.668": {
-      "sha512": "Lgj+Kf1+RV0utKxX9u1WEcymPGrbWrj/AwFmFADFLLa/LLdc1ji2MIGcecFRAGUu6UO8BRbdjZAIYWvLlN1B/A==",
+    "protobuf-net/3.2.26": {
+      "sha512": "zBzBiKs4yP+tzQOsRA5WbI/zayS6eFv8g0KIKNPI7/RUY1nk9Oe+STmtbUYkNUkO3T3SidEoZv+tF1nmgTSutQ==",
       "type": "package",
-      "path": "protobuf-net/2.0.0.668",
+      "path": "protobuf-net/3.2.26",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/net20-cf/protobuf-net.dll",
-        "lib/net20-cf/protobuf-net.pdb",
-        "lib/net20-cf/protobuf-net.xml",
-        "lib/net20/protobuf-net.dll",
-        "lib/net20/protobuf-net.pdb",
-        "lib/net20/protobuf-net.xml",
-        "lib/net30/protobuf-net.dll",
-        "lib/net30/protobuf-net.pdb",
-        "lib/net30/protobuf-net.xml",
-        "lib/net35-cf/protobuf-net.dll",
-        "lib/net35-cf/protobuf-net.pdb",
-        "lib/net35-cf/protobuf-net.xml",
-        "lib/net35/protobuf-net.dll",
-        "lib/net35/protobuf-net.pdb",
-        "lib/net35/protobuf-net.xml",
-        "lib/net40-cf/protobuf-net.dll",
-        "lib/net40-cf/protobuf-net.pdb",
-        "lib/net40-cf/protobuf-net.xml",
-        "lib/net40/protobuf-net.dll",
-        "lib/net40/protobuf-net.pdb",
-        "lib/net40/protobuf-net.xml",
-        "lib/netcore45/protobuf-net.XML",
-        "lib/netcore45/protobuf-net.dll",
-        "lib/netcore45/protobuf-net.pdb",
-        "lib/netcore45/protobuf-net.pri",
-        "lib/portable-sl4+net40+wp7+windows8/protobuf-net.dll",
-        "lib/portable-sl4+net40+wp7+windows8/protobuf-net.pdb",
-        "lib/portable-sl4+net40+wp7+windows8/protobuf-net.xml",
-        "lib/sl3-wp/protobuf-net.dll",
-        "lib/sl3-wp/protobuf-net.pdb",
-        "lib/sl3-wp/protobuf-net.xml",
-        "lib/sl4-windowsphone71/protobuf-net.dll",
-        "lib/sl4-windowsphone71/protobuf-net.pdb",
-        "lib/sl4-windowsphone71/protobuf-net.xml",
-        "lib/sl4/protobuf-net.dll",
-        "lib/sl4/protobuf-net.pdb",
-        "lib/sl4/protobuf-net.xml",
-        "lib/windowsphone8/protobuf-net.dll",
-        "lib/windowsphone8/protobuf-net.pdb",
-        "lib/windowsphone8/protobuf-net.xml",
-        "protobuf-net.2.0.0.668.nupkg.sha512",
-        "protobuf-net.nuspec"
+        "lib/net462/protobuf-net.dll",
+        "lib/net462/protobuf-net.xml",
+        "lib/net6.0/protobuf-net.dll",
+        "lib/net6.0/protobuf-net.xml",
+        "lib/netstandard2.0/protobuf-net.dll",
+        "lib/netstandard2.0/protobuf-net.xml",
+        "lib/netstandard2.1/protobuf-net.dll",
+        "lib/netstandard2.1/protobuf-net.xml",
+        "protobuf-net.3.2.26.nupkg.sha512",
+        "protobuf-net.nuspec",
+        "protobuf-net.png"
+      ]
+    },
+    "protobuf-net.Core/3.2.26": {
+      "sha512": "s8oJW9dBVxix4p8uqMbeG++DIGjgzOFAKoP2i5wayeeFOKBqG+cCBO2S/CAC4MAFlb5m1Os2m/miLcqRCgqJ7Q==",
+      "type": "package",
+      "path": "protobuf-net.core/3.2.26",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net462/protobuf-net.Core.dll",
+        "lib/net462/protobuf-net.Core.xml",
+        "lib/net6.0/protobuf-net.Core.dll",
+        "lib/net6.0/protobuf-net.Core.xml",
+        "lib/netstandard2.0/protobuf-net.Core.dll",
+        "lib/netstandard2.0/protobuf-net.Core.xml",
+        "lib/netstandard2.1/protobuf-net.Core.dll",
+        "lib/netstandard2.1/protobuf-net.Core.xml",
+        "protobuf-net.core.3.2.26.nupkg.sha512",
+        "protobuf-net.core.nuspec",
+        "protobuf-net.png"
+      ]
+    },
+    "System.Collections.Immutable/7.0.0": {
+      "sha512": "dQPcs0U1IKnBdRDBkrCTi1FoajSTBzLcVTpjO4MBCMC7f4pDOIPzgBoX8JjG7X6uZRJ8EBxsi8+DR1JuwjnzOQ==",
+      "type": "package",
+      "path": "system.collections.immutable/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "README.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Collections.Immutable.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Collections.Immutable.targets",
+        "lib/net462/System.Collections.Immutable.dll",
+        "lib/net462/System.Collections.Immutable.xml",
+        "lib/net6.0/System.Collections.Immutable.dll",
+        "lib/net6.0/System.Collections.Immutable.xml",
+        "lib/net7.0/System.Collections.Immutable.dll",
+        "lib/net7.0/System.Collections.Immutable.xml",
+        "lib/netstandard2.0/System.Collections.Immutable.dll",
+        "lib/netstandard2.0/System.Collections.Immutable.xml",
+        "system.collections.immutable.7.0.0.nupkg.sha512",
+        "system.collections.immutable.nuspec",
+        "useSharedDesignerContext.txt"
       ]
     },
     "Xamarin.Android.Glide/4.16.0.6": {
@@ -27046,24 +27903,28 @@
       "GtfsRealtimeBindings >= 0.0.4",
       "Microsoft.Extensions.Logging.Debug >= 9.0.0",
       "Microsoft.Maui.Controls >= 9.0.14",
-      "Microsoft.NET.ILLink.Tasks >= 9.0.3"
+      "Microsoft.NET.ILLink.Tasks >= 9.0.3",
+      "protobuf-net >= 3.2.19"
     ],
     "net9.0-ios18.2": [
       "GtfsRealtimeBindings >= 0.0.4",
       "Microsoft.Extensions.Logging.Debug >= 9.0.0",
       "Microsoft.Maui.Controls >= 9.0.14",
-      "Microsoft.NET.ILLink.Tasks >= 9.0.3"
+      "Microsoft.NET.ILLink.Tasks >= 9.0.3",
+      "protobuf-net >= 3.2.19"
     ],
     "net9.0-maccatalyst18.2": [
       "GtfsRealtimeBindings >= 0.0.4",
       "Microsoft.Extensions.Logging.Debug >= 9.0.0",
       "Microsoft.Maui.Controls >= 9.0.14",
-      "Microsoft.NET.ILLink.Tasks >= 9.0.3"
+      "Microsoft.NET.ILLink.Tasks >= 9.0.3",
+      "protobuf-net >= 3.2.19"
     ],
     "net9.0-windows10.0.19041": [
       "GtfsRealtimeBindings >= 0.0.4",
       "Microsoft.Extensions.Logging.Debug >= 9.0.0",
-      "Microsoft.Maui.Controls >= 9.0.14"
+      "Microsoft.Maui.Controls >= 9.0.14",
+      "protobuf-net >= 3.2.19"
     ]
   },
   "packageFolders": {
@@ -27150,6 +28011,10 @@
             "target": "Package",
             "version": "[9.0.3, )",
             "autoReferenced": true
+          },
+          "protobuf-net": {
+            "target": "Package",
+            "version": "[3.2.19, )"
           }
         },
         "imports": [
@@ -27193,6 +28058,10 @@
             "target": "Package",
             "version": "[9.0.3, )",
             "autoReferenced": true
+          },
+          "protobuf-net": {
+            "target": "Package",
+            "version": "[3.2.19, )"
           }
         },
         "imports": [
@@ -27236,6 +28105,10 @@
             "target": "Package",
             "version": "[9.0.3, )",
             "autoReferenced": true
+          },
+          "protobuf-net": {
+            "target": "Package",
+            "version": "[3.2.19, )"
           }
         },
         "imports": [
@@ -27274,6 +28147,10 @@
           "Microsoft.Maui.Controls": {
             "target": "Package",
             "version": "[9.0.14, )"
+          },
+          "protobuf-net": {
+            "target": "Package",
+            "version": "[3.2.19, )"
           }
         },
         "imports": [
@@ -27324,21 +28201,44 @@
   },
   "logs": [
     {
-      "code": "NU1701",
+      "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'GtfsRealtimeBindings 0.0.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0-android35.0'. This package may not be fully compatible with your project.",
-      "libraryId": "GtfsRealtimeBindings",
+      "message": "DRTApp depends on protobuf-net (>= 3.2.19) but protobuf-net 3.2.19 was not found. protobuf-net 3.2.26 was resolved instead.",
+      "libraryId": "protobuf-net",
       "targetGraphs": [
-        "net9.0-android35.0"
+        "net9.0-android35.0",
+        "net9.0-android35.0/android-arm64",
+        "net9.0-android35.0/android-x64",
+        "net9.0-android35.0/iossimulator-x64",
+        "net9.0-android35.0/maccatalyst-x64",
+        "net9.0-android35.0/win10-x64",
+        "net9.0-ios18.2",
+        "net9.0-ios18.2/android-arm64",
+        "net9.0-ios18.2/android-x64",
+        "net9.0-ios18.2/iossimulator-x64",
+        "net9.0-ios18.2/maccatalyst-x64",
+        "net9.0-ios18.2/win10-x64",
+        "net9.0-maccatalyst18.2",
+        "net9.0-maccatalyst18.2/android-arm64",
+        "net9.0-maccatalyst18.2/android-x64",
+        "net9.0-maccatalyst18.2/iossimulator-x64",
+        "net9.0-maccatalyst18.2/maccatalyst-x64",
+        "net9.0-maccatalyst18.2/win10-x64",
+        "net9.0-windows10.0.19041",
+        "net9.0-windows10.0.19041/android-arm64",
+        "net9.0-windows10.0.19041/android-x64",
+        "net9.0-windows10.0.19041/iossimulator-x64",
+        "net9.0-windows10.0.19041/maccatalyst-x64",
+        "net9.0-windows10.0.19041/win10-x64"
       ]
     },
     {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'protobuf-net 2.0.0.668' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0-android35.0'. This package may not be fully compatible with your project.",
-      "libraryId": "protobuf-net",
+      "message": "Package 'GtfsRealtimeBindings 0.0.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0-android35.0'. This package may not be fully compatible with your project.",
+      "libraryId": "GtfsRealtimeBindings",
       "targetGraphs": [
         "net9.0-android35.0"
       ]

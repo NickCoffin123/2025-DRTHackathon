@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "d65kRcCSzGQ=",
+  "dgSpecHash": "oe+/z7CXI7Y=",
   "success": true,
   "projectFilePath": "C:\\Users\\nickc\\Desktop\\Hackathon\\DRTApp\\DRTApp.csproj",
   "expectedPackageFiles": [
@@ -30,7 +30,9 @@
     "C:\\Users\\nickc\\.nuget\\packages\\microsoft.web.webview2\\1.0.2792.45\\microsoft.web.webview2.1.0.2792.45.nupkg.sha512",
     "C:\\Users\\nickc\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512",
     "C:\\Users\\nickc\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.240923002\\microsoft.windowsappsdk.1.6.240923002.nupkg.sha512",
-    "C:\\Users\\nickc\\.nuget\\packages\\protobuf-net\\2.0.0.668\\protobuf-net.2.0.0.668.nupkg.sha512",
+    "C:\\Users\\nickc\\.nuget\\packages\\protobuf-net\\3.2.26\\protobuf-net.3.2.26.nupkg.sha512",
+    "C:\\Users\\nickc\\.nuget\\packages\\protobuf-net.core\\3.2.26\\protobuf-net.core.3.2.26.nupkg.sha512",
+    "C:\\Users\\nickc\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",
     "C:\\Users\\nickc\\.nuget\\packages\\xamarin.android.glide\\4.16.0.6\\xamarin.android.glide.4.16.0.6.nupkg.sha512",
     "C:\\Users\\nickc\\.nuget\\packages\\xamarin.android.glide.annotations\\4.16.0.6\\xamarin.android.glide.annotations.4.16.0.6.nupkg.sha512",
     "C:\\Users\\nickc\\.nuget\\packages\\xamarin.android.glide.disklrucache\\4.16.0.6\\xamarin.android.glide.disklrucache.4.16.0.6.nupkg.sha512",
@@ -126,21 +128,44 @@
   ],
   "logs": [
     {
-      "code": "NU1701",
+      "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'GtfsRealtimeBindings 0.0.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0-android35.0'. This package may not be fully compatible with your project.",
-      "libraryId": "GtfsRealtimeBindings",
+      "message": "DRTApp depends on protobuf-net (>= 3.2.19) but protobuf-net 3.2.19 was not found. protobuf-net 3.2.26 was resolved instead.",
+      "libraryId": "protobuf-net",
       "targetGraphs": [
-        "net9.0-android35.0"
+        "net9.0-android35.0",
+        "net9.0-android35.0/android-arm64",
+        "net9.0-android35.0/android-x64",
+        "net9.0-android35.0/iossimulator-x64",
+        "net9.0-android35.0/maccatalyst-x64",
+        "net9.0-android35.0/win10-x64",
+        "net9.0-ios18.2",
+        "net9.0-ios18.2/android-arm64",
+        "net9.0-ios18.2/android-x64",
+        "net9.0-ios18.2/iossimulator-x64",
+        "net9.0-ios18.2/maccatalyst-x64",
+        "net9.0-ios18.2/win10-x64",
+        "net9.0-maccatalyst18.2",
+        "net9.0-maccatalyst18.2/android-arm64",
+        "net9.0-maccatalyst18.2/android-x64",
+        "net9.0-maccatalyst18.2/iossimulator-x64",
+        "net9.0-maccatalyst18.2/maccatalyst-x64",
+        "net9.0-maccatalyst18.2/win10-x64",
+        "net9.0-windows10.0.19041",
+        "net9.0-windows10.0.19041/android-arm64",
+        "net9.0-windows10.0.19041/android-x64",
+        "net9.0-windows10.0.19041/iossimulator-x64",
+        "net9.0-windows10.0.19041/maccatalyst-x64",
+        "net9.0-windows10.0.19041/win10-x64"
       ]
     },
     {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'protobuf-net 2.0.0.668' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0-android35.0'. This package may not be fully compatible with your project.",
-      "libraryId": "protobuf-net",
+      "message": "Package 'GtfsRealtimeBindings 0.0.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0-android35.0'. This package may not be fully compatible with your project.",
+      "libraryId": "GtfsRealtimeBindings",
       "targetGraphs": [
         "net9.0-android35.0"
       ]
