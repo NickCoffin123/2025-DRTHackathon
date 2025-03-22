@@ -19,7 +19,7 @@ namespace DRTApp.Classes {
         public static async Task ReadRoutesFileAsync() {
             try {
                 // Path to routes.txt in resources (works across platforms)
-                string fileName = "C:\\Hackathon\\2025-DRTHackathon\\DRTApp\\Resources\\Raw\\stops.txt";
+                string fileName = "\\Resources\\Raw\\stops.txt";
 
                 // Attempt to open the file from the app's package
                 using (Stream fileStream = await FileSystem.OpenAppPackageFileAsync(fileName)) {
