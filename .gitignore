@@ -1,0 +1,47 @@
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio's folder
+.vs/
+
+# Build results of VS
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+
+# VS Code settings (optional)
+.vscode/
+
+# NuGet packages (can be restored)
+packages/
+*.nupkg
+
+# Rider settings (if you're using JetBrains)
+.idea/
+
+# Auto-generated files
+Generated_Code/
+
+# Windows-specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ASP.NET
+*.Publish.xml
+*.dbmdl
+
+# Entity Framework
+Migrations/
+
+# Crash logs
+*.stackdump
