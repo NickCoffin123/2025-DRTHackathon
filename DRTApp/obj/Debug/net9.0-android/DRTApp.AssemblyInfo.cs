@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DRTApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+9093f8eb4a00ca986b4f8503a76515a72455759d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+f707f8f5d4c643bbfe892d2aa52475569e7b5e6c")]
 [assembly: System.Reflection.AssemblyProductAttribute("DRTApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DRTApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
