@@ -7,6 +7,7 @@ using System.IO;
 using System.Globalization;
 using Microsoft.Maui.Storage;
 using System.Diagnostics;
+using DRTApp.Properties;
 
 namespace DRTApp.Classes
 {
@@ -42,9 +43,11 @@ namespace DRTApp.Classes
     {
         // CONSTS
         // Fixed name of the stops files we downloaded
-        private static string STOPS = "C:\\Users\\rjmac\\OneDrive\\Documents\\DC Resources\\2025-DRTHackathon\\DRTApp\\Resources\\Raw\\stops.txt";
-        private static string STOP_TIMES = "C:\\Users\\rjmac\\OneDrive\\Documents\\DC Resources\\2025-DRTHackathon\\DRTApp\\Resources\\Raw\\stop_times.txt";
-        private static string TRIPS = "C:\\Users\\rjmac\\OneDrive\\Documents\\DC Resources\\2025-DRTHackathon\\DRTApp\\Resources\\Raw\\trips.txt";
+        private static string STOPS = "C:\\Hackathon\\2025-DRTHackathon\\DRTApp\\Resources\\stops.txt";
+        private static string STOP_TIMES = "C:\\Hackathon\\2025-DRTHackathon\\DRTApp\\Resources\\stop_times.txt";
+        private static string TRIPS = "C:\\Hackathon\\2025-DRTHackathon\\DRTApp\\Resources\\trips.txt";
+
+       
 
         // PROPS
         public List<sStop> Stops { get; set; }
