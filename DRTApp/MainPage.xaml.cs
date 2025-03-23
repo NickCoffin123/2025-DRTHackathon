@@ -21,7 +21,7 @@ namespace DRTApp
         Timer _timer;
 
         // VARS
-        int tickInterval = 3000;
+        int tickInterval = 10000;
 
         float hdrHeightPercent = .075f;
         float mapHeightPercent = .5f;
