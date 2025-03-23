@@ -43,9 +43,9 @@ namespace DRTApp.Classes
     {
         // CONSTS
         // Fixed name of the stops files we downloaded
-        private static string STOPS = "Resources\\raw\\stops.txt";
-        private static string STOP_TIMES = "Resources\\raw\\stop_times.txt";
-        private static string TRIPS = "Resources\\raw\\trips.txt";
+        private static string STOPS = "stops.txt"; //"Resources\\Raw\\stops.txt";
+        private static string STOP_TIMES = "stop_times.txt"; //"Resources\\Raw\\stop_times.txt";
+        private static string TRIPS = "trips.txt"; //"Resources\\Raw\\trips.txt";
 
         // PROPS
         public List<sStop> Stops { get; set; }

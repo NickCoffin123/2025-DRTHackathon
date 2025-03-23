@@ -7,13 +7,13 @@
 
     <ScrollView>
         <VerticalStackLayout
-            Padding="0,0"
+            Padding="0,0,0,0"
             Spacing="0">
 
             <Frame x:Name="hdr"
                 BorderColor="White"
                 BackgroundColor="White"
-                Padding="0"
+                Padding="0,10,0,0"
                 Margin="0,0,0,0"
                 CornerRadius="0">
                 <Image

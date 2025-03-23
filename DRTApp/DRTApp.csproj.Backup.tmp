@@ -48,7 +48,7 @@
      <MauiAsset Include="Resources\Raw\stops.txt" />       
 	 <MauiAsset Include="Resources\Raw\stop_times.txt" />       
 	 <MauiAsset Include="Resources\Raw\trips.txt" />  
-	 <MauiAsset Include="Resources\Raw\index.html">
+	 <MauiAsset Include="Resources\Web\index.html">
 	   <CopyToOutputDirectory>Never</CopyToOutputDirectory>
 	 </MauiAsset>  
    </ItemGroup> 
@@ -113,6 +113,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiAsset Update="Resources\Raw\index.html">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </MauiAsset>
 	  <MauiAsset Update="Resources\Raw\stops.txt">
 	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
 	  </MauiAsset>
