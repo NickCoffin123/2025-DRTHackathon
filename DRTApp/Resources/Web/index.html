@@ -32,13 +32,14 @@
                 map: map,
                 icon: {
                     url: "https://img.icons8.com/ios/50/marker--v1.png",
-                    scaledSize: new google.maps.Size(50, 50)
+                    scaledSize: new google.maps.Size(50, 50),
+                    labelOrigin: new google.maps.Point(25,-25)
                 },
                 label: {
                     text: `You are here!`,
                     fontWeight: "bold",
-                    color: "#222222",
-                    fontSize: "26px"
+                    color: "#111111",
+                    fontSize: "32px"
                 }
             });
             const userMarkerInfo = new google.maps.InfoWindow({

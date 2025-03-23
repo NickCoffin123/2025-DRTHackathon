@@ -75,10 +75,12 @@
 	<ItemGroup>
 	  <Content Include="Resources\Raw\routes.txt" />
 	  <Content Include="Resources\Raw\shapes.txt" />
-	  <Content Include="Resources\Raw\stops.txt">
+	  <EmbeddedResource Include="Resources\Raw\stops.txt">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  </Content>
-	  <Content Include="Resources\Raw\trips.txt" />
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Resources\Raw\trips.txt">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
 	  <Content Include="Resources\Web\index.html">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Content>
