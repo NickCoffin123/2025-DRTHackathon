@@ -45,3 +45,8 @@ Migrations/
 
 # Crash logs
 *.stackdump
+
+# Custom
+DRTApp/obj/DRTApp.csproj.nuget.dgspec.json
+DRTApp/obj/DRTApp.csproj.nuget.g.props
+DRTApp/obj/project.assets.json
