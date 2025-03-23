@@ -1,9 +1,10 @@
 DRT Bus Tracker  
 By:
-    - Robert (RJ) Macklem
-    - Nicholas Coffin
-    - Mike Melchior
-    - Brady Inglis
+- Robert (RJ) Macklem  
+- Nicholas Coffin  
+- Mike Melchior  
+- Brady Inglis  
+
   
 Submission for the Durham College SEIT Hackathon 2025  
 Submitted to https://devpost.com/software/drt-bus-tracker  
