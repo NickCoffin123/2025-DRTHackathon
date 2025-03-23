@@ -11,7 +11,7 @@ namespace DRTApp.Classes
 {
     internal class MapHtmlBuilder
     {
-        private const string HTML_DIR = "D:\\DurhamCollege\\Hackathon\\DRTFInal\\DRTApp\\Resources\\Web\\index.html";
+        private const string HTML_DIR = "Resources\\web\\index.html";
 
         public static async Task<HtmlWebViewSource> GrabHtml(sStop stop, List<string> busPositions)
         {

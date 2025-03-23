@@ -11,6 +11,8 @@ namespace DRTApp
     public partial class MainPage : ContentPage {
 
         //CONSTS
+        private const string HTML_DIR = "Resources\\web\\index.html";
+
         string TRIP_UPDATES_URL = "https://drtonline.durhamregiontransit.com/gtfsrealtime/TripUpdates";
         string VEHICLE_POSITIONS_URL = "https://drtonline.durhamregiontransit.com/gtfsrealtime/VehiclePositions";
         
@@ -35,6 +37,8 @@ namespace DRTApp
         public MainPage() {
             InitializeComponent();
             InitializeTimer();
+
+            //UpdateMap(stop, busPositions);
         }
         private async void OnCounterClicked(object sender, EventArgs e) {
             string stopID = myEntry.Text;
@@ -42,12 +46,27 @@ namespace DRTApp
                 stop = res.GetStop(stopID);
 
                 GetIncomingTripsLive();
+                UpdateMap(stop, busPositions);
+
+                // For testing
+                //await Navigation.PushAsync(new MapPage(stop, busPositions));
+                //ErrorArea.IsVisible = false;
             }
 
             else
             {
                 lblIncomingBusses.Text = "STOP NOT FOUND";
+                //ErrorArea.IsVisible = true;
             }
+        }
+
+        // ***********************************************
+        //                      MAP
+        // ***********************************************
+        public async void UpdateMap(sStop stop, List<string> busPositions)
+        {
+            // Grab HTML source
+            WebMapArea.Source = await MapHtmlBuilder.GrabHtml(stop, busPositions);
         }
 
         // ***********************************************
@@ -78,42 +97,12 @@ namespace DRTApp
         // add it here. Ticker was made to live update bus pos's.
         private void OnTick()
         {
+            Debug.WriteLine("Tick @ timestamp:" + DateTime.Now.ToString());
             if (busPositions.Count > 0)
             {
-                foreach (string busID in busIDs)
-                {
-
-                }
+                UpdateBusPositions();
+                UpdateMap(stop, busPositions);
             }
-
-        }
-
-        // ***********************************************
-        //                  MAP GENERATOR
-        // ***********************************************
-        private async void OnMapGeneratorClicked(object sender, EventArgs e) {
-            string stopID = StopIDEntry.Text;
-            if (ValidateStopID(stopID)) {
-                stop = GetStop(stopID);
-                stopTime = GetStopTime(stopID);
-                trip = GetTrip(stopTime.tripID);
-                GetIncomingTripsLive();
-
-                // For testing
-                await Navigation.PushAsync(new MapPage(stop, busPositions));
-
-                // uncomment this to test bus display if none are matching in busPositions array
-                /*await Navigation.PushAsync(new MapPage(stop, new List<string>() { "43.9001,-78.8658", "43.8976,-78.8605", "43.9142,-78.8761" }));*/
-                ErrorArea.IsVisible = false;
-
-            }
-
-            else
-            {
-                ErrorArea.IsVisible = true;
-            }
-
-            Debug.WriteLine($"{stop.stopName} - Arriving at: {stopTime.arrivalTime} - Travelling to: {trip.tripHeadsign}");
         }
 
         // ***********************************************
