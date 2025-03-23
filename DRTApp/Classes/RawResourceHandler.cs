@@ -167,29 +167,51 @@ namespace DRTApp.Classes
             return new Trip();
         }
 
-        private List<Trip> GetNextThreeTripsByStopID(string stopID)
-        {
+        public List<Trip> GetNextThreeTripsByStopID(string stopID) {
             DateTime time = DateTime.Now;
             List<StopTime> stopTimes = new();
             List<Trip> trips = new();
 
-            foreach (StopTime stopTime in StopTimes)
-            {
-                DateTime targetTime = DateTime.Today.Add(TimeSpan.Parse(stopTime.arrivalTime));
-                bool future = targetTime > time;
 
-                if (!future) continue;
-                else if (stopTime.stopID == stopID) stopTimes.Add(stopTime);
+            foreach (StopTime stopTime in StopTimes) {
+                if (stopTime.stopID == stopID) {
+                    string[] timeParts = stopTime.arrivalTime.Split(":");
+                    if (int.Parse(timeParts[0]) > 23) timeParts[0] = (int.Parse(timeParts[0]) - 24).ToString();
+                    string hoursMinutes = timeParts[0] + ":" + timeParts[1];
+
+                    DateTime targetTime = DateTime.Today.Add(TimeSpan.Parse(hoursMinutes));
+                    //Debug.WriteLine("Arrival time: " + targetTime + ", Now: " + time);
+                    bool future = targetTime > time;
+                    //Debug.WriteLine("Future: " + future);
+
+                    if (!future) continue;
+                    else stopTimes.Add(stopTime);
+                }
             }
+
+            if (stopTimes.Count == 0) return trips;
 
             stopTimes = stopTimes.OrderBy(st => DateTime.Parse(st.arrivalTime)).ToList();
-            for (int i = 0; i < 3; i++)
-            {
-                Trip trip = GetTrip(stopTimes[i].tripID);
-                if (trip.tripID != null) trips.Add(trip);
+            if (stopTimes.Count > 3) {
+                for (int i = 0; i < 3; i++) {
+                    Trip trip = GetTrip(stopTimes[i].tripID);
+                    if (trip.tripID != null) trips.Add(trip);
+                }
+            }
+            else {
+                foreach (StopTime stopTime in stopTimes) {
+                    Trip trip = GetTrip(stopTime.tripID);
+                    if (trip.tripID != null) trips.Add(trip);
+                }
+
             }
 
+            //foreach (Trip trip in trips) {
+            //    Debug.WriteLine($"{trip.tripID} - {trip.tripHeadsign}");
+            //}
             return trips;
+
         }
+
     }
 }

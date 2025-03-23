@@ -15,6 +15,7 @@ namespace DRTApp
         sStop stop;
         StopTime stopTime;
         Trip trip;
+        List<string> busPositions = new();
 
         public MainPage() {
             InitializeComponent();
@@ -29,9 +30,9 @@ namespace DRTApp
             }
 
             Debug.WriteLine($"{stop.stopName} - {stopTime.arrivalTime} - {trip.tripHeadsign}");
-            
-            
-            //TripUpdates();
+
+
+            GetIncomingTripsLive();
 
         }
 
@@ -67,7 +68,6 @@ namespace DRTApp
 
         private Trip GetTrip(string tripID) {
             foreach (Trip trip in RawResourceHandler.Instance.Trips) {
-                Debug.WriteLine(trip.tripID);
                 if (trip.tripID == tripID) {
                     return trip;
                 }
@@ -75,15 +75,33 @@ namespace DRTApp
             return new Trip();
         }
 
-        private void TripUpdates() {
+        private void GetIncomingTripsLive() {
+            List<Trip> incomingTrips = RawResourceHandler.Instance.GetNextThreeTripsByStopID(stop.stopID);
+            List<string> incomingTripIds = new();
+
+            if (incomingTrips.Count == 0) {
+                Debug.WriteLine("No incoming busses");
+                return;
+            }
+
+            foreach (Trip trip in incomingTrips) {
+                Debug.WriteLine("Incoming trip: " + trip.tripID);
+                incomingTripIds.Add(trip.tripID);
+            }
+
             WebRequest req = HttpWebRequest.Create(VEHICLE_POSITIONS_URL);
             FeedMessage feed = Serializer.Deserialize<FeedMessage>(req.GetResponse().GetResponseStream());
             foreach (FeedEntity entity in feed.Entities) {
-                if (entity.Vehicle.StopId == stop.stopID) {
+                if (incomingTripIds.Contains(entity.Vehicle.Trip.TripId)) {
                     Debug.WriteLine("Matching trip found! : ");
                     Debug.WriteLine(entity.Vehicle.Position.Latitude);
                     Debug.WriteLine(entity.Vehicle.Position.Longitude);
+                    busPositions.Add(entity.Vehicle.Position.Latitude + "," + entity.Vehicle.Position.Longitude);
                 }
+            }
+
+            foreach (string pos in busPositions) {
+                Debug.WriteLine("Bus " + (busPositions.IndexOf(pos) + 1) + ": " + pos);
             }
         }
     }
