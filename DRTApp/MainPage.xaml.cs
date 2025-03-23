@@ -43,6 +43,7 @@ namespace DRTApp
         private async void OnCounterClicked(object sender, EventArgs e) {
             string stopID = myEntry.Text;
             if (res.ValidateStopID(stopID)) {
+                lblIncomingBusses.Text = "";
                 stop = res.GetStop(stopID);
 
                 GetIncomingTripsLive();
