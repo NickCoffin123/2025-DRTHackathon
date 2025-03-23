@@ -29,7 +29,7 @@ namespace DRTApp
                 trip = GetTrip(stopTime.tripID);
             }
 
-            Debug.WriteLine($"{stop.stopName} - {stopTime.arrivalTime} - {trip.tripHeadsign}");
+            Debug.WriteLine($"{stop.stopName} - Arriving at: {stopTime.arrivalTime} - Travelling to: {trip.tripHeadsign}");
 
 
             GetIncomingTripsLive();
@@ -76,6 +76,8 @@ namespace DRTApp
         }
 
         private void GetIncomingTripsLive() {
+            busPositions.Clear();
+
             List<Trip> incomingTrips = RawResourceHandler.Instance.GetNextThreeTripsByStopID(stop.stopID);
             List<string> incomingTripIds = new();
 
@@ -93,15 +95,14 @@ namespace DRTApp
             FeedMessage feed = Serializer.Deserialize<FeedMessage>(req.GetResponse().GetResponseStream());
             foreach (FeedEntity entity in feed.Entities) {
                 if (incomingTripIds.Contains(entity.Vehicle.Trip.TripId)) {
-                    Debug.WriteLine("Matching trip found! : ");
-                    Debug.WriteLine(entity.Vehicle.Position.Latitude);
-                    Debug.WriteLine(entity.Vehicle.Position.Longitude);
+                    Debug.WriteLine("Matching trip found! : " + entity.Vehicle.Vehicle.Label);
                     busPositions.Add(entity.Vehicle.Position.Latitude + "," + entity.Vehicle.Position.Longitude);
                 }
             }
 
             foreach (string pos in busPositions) {
                 Debug.WriteLine("Bus " + (busPositions.IndexOf(pos) + 1) + ": " + pos);
+
             }
         }
     }
