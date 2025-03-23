@@ -20,15 +20,15 @@ namespace DRTApp.Classes
             StreamReader reader = new(fileStream);
 
             // Read file contents, return html source
-            string content = await reader.ReadToEndAsync();
+            string htmlContent = await reader.ReadToEndAsync();
             return new HtmlWebViewSource
             {
-                Html = InjectJSON(content, stop, busPositions),
+                Html = InjectJSON(htmlContent, stop, busPositions),
                 BaseUrl = HTML_DIR
             };
         }
 
-        public static string InjectJSON(string content, sStop stop, List<string> busPositions)
+        public static string InjectJSON(string htmlContent, sStop stop, List<string> busPositions)
         {
             // anonymous object for json
             var data = new
@@ -38,10 +38,7 @@ namespace DRTApp.Classes
             };
 
             // Add JSON of stop data to html source
-            int jsonStartIndex = content.IndexOf("const data={");
-            int jsonEndIndex = content.IndexOf("}</script>");
-            string jsonElement = content.Substring(content.IndexOf("const data={"), jsonEndIndex - jsonStartIndex + 1);
-            return content.Replace(jsonElement, $"const data={JsonSerializer.Serialize(data, new JsonSerializerOptions { IncludeFields = true })}");
+            return htmlContent.Replace("const data = {}", $"const data={JsonSerializer.Serialize(data, new JsonSerializerOptions { IncludeFields = true })}");
 
         }
     }

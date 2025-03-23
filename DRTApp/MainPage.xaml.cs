@@ -20,7 +20,7 @@ namespace DRTApp
         public MainPage() {
             InitializeComponent();
 
-            // Initial validate call to trigger instnatiation
+            // Initial validate call to trigger instnatiation (ensures all data is loaded by utilizing RawResourceHandler right away)
             ValidateStopID(StopIDEntry.Text);
         }
 
@@ -31,14 +31,22 @@ namespace DRTApp
                 stopTime = GetStopTime(stopID);
                 trip = GetTrip(stopTime.tripID);
                 GetIncomingTripsLive();
+
+                // For testing
                 await Navigation.PushAsync(new MapPage(stop, busPositions));
+
+                // uncomment this to test bus display if none are matching in busPositions array
+                /*await Navigation.PushAsync(new MapPage(stop, new List<string>() { "43.9001,-78.8658", "43.8976,-78.8605", "43.9142,-78.8761" }));*/
+                ErrorArea.IsVisible = false;
+
+            }
+
+            else
+            {
+                ErrorArea.IsVisible = true;
             }
 
             Debug.WriteLine($"{stop.stopName} - Arriving at: {stopTime.arrivalTime} - Travelling to: {trip.tripHeadsign}");
-
-
-
-
         }
 
         private bool ValidateStopID(string stopID) {

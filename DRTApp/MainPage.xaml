@@ -5,10 +5,12 @@
              BackgroundColor="White"
              >
 
-    <ScrollView>
+    <ScrollView Padding="50">
         <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
+            VerticalOptions="Center"
+            Spacing="25"
+            Margin="0,0,0,100">
+                        
             <Image
                 Source="drt.png"
                 HeightRequest="185"
@@ -27,27 +29,41 @@
                 TextColor="Black"
                 SemanticProperties.HeadingLevel="Level2"/>
 
+            <Border Stroke="#D93025"
+                    BackgroundColor="#FDECEA"
+                    StrokeShape="RoundRectangle"
+                    Padding="10"
+                    IsVisible="Collapse"
+                    x:Name="ErrorArea">
+                <Label Text="Error - Invalid bus stop number."
+                      TextColor="#D93025"/>
+            </Border>
+
             <Border>
                 <VerticalStackLayout>
                     <Entry
-                       x:Name="StopIDEntry"
-                       Placeholder="Enter stop number here"
-                       TextColor="Black"
-                       Text=""
-                       Margin="10"/>
+                        x:Name="StopIDEntry"
+                        Placeholder="Enter stop number here..."
+                        TextColor="#3E2B2F"
+                        FontAttributes="Bold"
+                        Text=""
+                        Margin="10"/>
                 </VerticalStackLayout>
      
             </Border>
-            
-            
-
                            
             <Button
+                CornerRadius="10"
+                TextColor="#3E2B2F"
+                FontAttributes="Bold"
                 x:Name="MapGeneratorButton"
-                Text="Click here to generate a map for your stop!" 
+                Text="Generate Map" 
                 SemanticProperties.Hint="Generates map."
                 Clicked="OnMapGeneratorClicked"
-                HorizontalOptions="Fill" />
+                Background="#0B8261"
+                MaximumWidthRequest="500"
+                />
+
         </VerticalStackLayout>
     </ScrollView>
 

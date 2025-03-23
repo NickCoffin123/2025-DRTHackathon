@@ -14,8 +14,8 @@
     
     <!-- Data is dynamically loaded in c# -->
     <script>
-        const data={
-        }</script>
+        const data = {};
+    </script>
 
     <script>
 
@@ -31,13 +31,13 @@
                 position: { lat: Number(data.stopData.stopLat), lng: Number(data.stopData.stopLon) },
                 map: map,
                 icon: {
-                    url: "https://img.icons8.com/pulsar-color/48/bus-stop.png",
-                    scaledSize: new google.maps.Size(80, 80)
+                    url: "https://img.icons8.com/ios/50/marker--v1.png",
+                    scaledSize: new google.maps.Size(50, 50)
                 },
                 label: {
                     text: `You are here!`,
                     fontWeight: "bold",
-                    color: "#555555",
+                    color: "#222222",
                     fontSize: "26px"
                 }
             });
@@ -47,6 +47,24 @@
             userMarker.addListener("click", () => {
                 userMarkerInfo.open(map, userMarker);
             });
+
+            // Bus positions
+            for (const bus of data.busPositionsData) {
+                const busMarker = new google.maps.Marker({
+                    position: { lat: Number(bus.split(",")[0]), lng: Number(bus.split(",")[1]) },
+                    map: map,
+                    icon: {
+                        url: "https://img.icons8.com/pulsar-color/48/bus-stop.png",
+                        scaledSize: new google.maps.Size(80, 80)
+                    }
+                });
+                const busMarkerInfo = new google.maps.InfoWindow({
+                    content: `<h2>Bus Info</h2><p>This bus is on route to your stop (${data.stopData.stopName}).</p>`
+                });
+                busMarker.addListener("click", () => {
+                    busMarkerInfo.open(map, busMarker);
+                });
+            }
         }
 
     </script>
