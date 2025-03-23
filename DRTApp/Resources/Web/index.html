@@ -1,0 +1,74 @@
+<html> 
+<head>
+    <style>
+        html, body, #map {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARtGydMuhONq6nXtyfD-SwpI57bG-86BQ&callback=setupMap"></script>
+    
+    <!-- Data is dynamically loaded in c# -->
+    <script>
+        const data = {};
+    </script>
+
+    <script>
+
+        // Initializes the map
+        function setupMap() {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: { lat: Number(data.stopData.stopLat), lng: Number(data.stopData.stopLon) }
+            });
+
+            // Marker for user
+            const userMarker = new google.maps.Marker({
+                position: { lat: Number(data.stopData.stopLat), lng: Number(data.stopData.stopLon) },
+                map: map,
+                icon: {
+                    url: "https://img.icons8.com/ios/50/marker--v1.png",
+                    scaledSize: new google.maps.Size(50, 50)
+                },
+                label: {
+                    text: `You are here!`,
+                    fontWeight: "bold",
+                    color: "#222222",
+                    fontSize: "26px"
+                }
+            });
+            const userMarkerInfo = new google.maps.InfoWindow({
+                content: `<h2>Stop Info</h2><p>Stop ID: ${data.stopData.stopID}<br/>Stop name: ${data.stopData.stopName}</p>`
+            });
+            userMarker.addListener("click", () => {
+                userMarkerInfo.open(map, userMarker);
+            });
+
+            // Bus positions
+            for (const bus of data.busPositionsData) {
+                const busMarker = new google.maps.Marker({
+                    position: { lat: Number(bus.split(",")[0]), lng: Number(bus.split(",")[1]) },
+                    map: map,
+                    icon: {
+                        url: "https://img.icons8.com/pulsar-color/48/bus-stop.png",
+                        scaledSize: new google.maps.Size(80, 80)
+                    }
+                });
+                const busMarkerInfo = new google.maps.InfoWindow({
+                    content: `<h2>Bus Info</h2><p>This bus is on route to your stop (${data.stopData.stopName}).</p>`
+                });
+                busMarker.addListener("click", () => {
+                    busMarkerInfo.open(map, busMarker);
+                });
+            }
+        }
+
+    </script>
+
+    <div id="map"></div>
+</body >
+</html >

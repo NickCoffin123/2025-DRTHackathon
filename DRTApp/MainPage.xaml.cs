@@ -36,6 +36,19 @@ namespace DRTApp
             InitializeComponent();
             InitializeTimer();
         }
+        private async void OnCounterClicked(object sender, EventArgs e) {
+            string stopID = myEntry.Text;
+            if (res.ValidateStopID(stopID)) {
+                stop = res.GetStop(stopID);
+
+                GetIncomingTripsLive();
+            }
+
+            else
+            {
+                lblIncomingBusses.Text = "STOP NOT FOUND";
+            }
+        }
 
         // ***********************************************
         //                  TICKER
@@ -61,20 +74,6 @@ namespace DRTApp
             _timer?.Dispose(); // timer doesnt garbage collect
         }
 
-        private async void OnCounterClicked(object sender, EventArgs e) {
-            string stopID = myEntry.Text;
-            if (res.ValidateStopID(stopID)) {
-                stop = res.GetStop(stopID);
-
-                GetIncomingTripsLive();
-            }
-
-            else
-            {
-                lblIncomingBusses.Text = "STOP NOT FOUND";
-            }
-        }
-
         // ***If you want to add functionality call on tick events,
         // add it here. Ticker was made to live update bus pos's.
         private void OnTick()
@@ -87,6 +86,34 @@ namespace DRTApp
                 }
             }
 
+        }
+
+        // ***********************************************
+        //                  MAP GENERATOR
+        // ***********************************************
+        private async void OnMapGeneratorClicked(object sender, EventArgs e) {
+            string stopID = StopIDEntry.Text;
+            if (ValidateStopID(stopID)) {
+                stop = GetStop(stopID);
+                stopTime = GetStopTime(stopID);
+                trip = GetTrip(stopTime.tripID);
+                GetIncomingTripsLive();
+
+                // For testing
+                await Navigation.PushAsync(new MapPage(stop, busPositions));
+
+                // uncomment this to test bus display if none are matching in busPositions array
+                /*await Navigation.PushAsync(new MapPage(stop, new List<string>() { "43.9001,-78.8658", "43.8976,-78.8605", "43.9142,-78.8761" }));*/
+                ErrorArea.IsVisible = false;
+
+            }
+
+            else
+            {
+                ErrorArea.IsVisible = true;
+            }
+
+            Debug.WriteLine($"{stop.stopName} - Arriving at: {stopTime.arrivalTime} - Travelling to: {trip.tripHeadsign}");
         }
 
         // ***********************************************
