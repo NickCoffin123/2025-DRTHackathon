@@ -206,13 +206,32 @@ namespace DRTApp
             {
                 lblIncomingBusses.Text = "No busses are inbound for stop " + myEntry.Text;
                 return;
-            } else {
-                lblIncomingBusses.Text = "Incoming busses found for stop " + myEntry.Text;
             }
 
             foreach (string pos in busPositions) {
                 Debug.WriteLine("Bus " + (busPositions.IndexOf(pos) + 1) + ": " + pos);
             }
+
+            WebRequest tripUpdateReq = HttpWebRequest.Create(TRIP_UPDATES_URL);
+            FeedMessage tripsUpdateFeed = Serializer.Deserialize<FeedMessage>(tripUpdateReq.GetResponse().GetResponseStream());
+            foreach (FeedEntity entity in tripsUpdateFeed.Entities)
+            {
+                
+                if (incomingTripIds.Contains(entity.Id)) {
+                    Trip trip = res.GetTrip(entity.Id);
+                    string delay = string.Empty;
+                    if (entity.TripUpdate.Delay == 0) delay = "On Time";
+                    else if (entity.TripUpdate.Delay > 0) delay = $"{entity.TripUpdate.Delay} Seconds Late";
+                    else if (entity.TripUpdate.Delay < 0) delay = $"{entity.TripUpdate.Delay} Seconds ahead of schedule";
+
+                    lblIncomingBusses.Text += $"{trip.tripHeadsign} is {delay}";
+                        
+
+                }
+            }
+
         }
+
+        
     }
 }
