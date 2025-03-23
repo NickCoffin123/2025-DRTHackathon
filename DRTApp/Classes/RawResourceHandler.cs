@@ -221,7 +221,7 @@ namespace DRTApp.Classes
                     return true;
                 }
             }
-
+            Debug.WriteLine("stop id not found, validation failed");
             return false;
         }
 

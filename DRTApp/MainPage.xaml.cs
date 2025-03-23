@@ -183,7 +183,7 @@ namespace DRTApp
 
             // Trips HTTP request
             Debug.WriteLine("Making Trips HTTP request...");
-            WebRequest tripsReq = HttpWebRequest.Create(TRIP_UPDATES_URL);
+            WebRequest tripsReq = HttpWebRequest.Create(VEHICLE_POSITIONS_URL);
             FeedMessage tripsFeed = Serializer.Deserialize<FeedMessage>(tripsReq.GetResponse().GetResponseStream());
             foreach (FeedEntity entity in tripsFeed.Entities)
             {
@@ -191,12 +191,12 @@ namespace DRTApp
                 Debug.WriteLine("Entity details: " +
                     entity.ToString() + " | " +
                     entity.Id + " | " +
-                    "Vehicle: " + entity.Vehicle //+ "|" + entity.Vehicle.Vehicle.Label
+                    "Vehicle: " + entity.Vehicle.Vehicle.Id //+ "|" + entity.Vehicle.Vehicle.Label
                 );
 
-                if (incomingTripIds.Contains(entity.Id))
-                {
-                    Debug.WriteLine("Incoming Bus: " + entity.TripUpdate.Vehicle.Label + ", delay: " + entity.TripUpdate.Delay);
+                if (incomingTripIds.Contains(entity.Vehicle.Trip.TripId)) {
+                    // needs separate trip_update http call
+                    //Debug.WriteLine("Incoming Bus: " + entity.TripUpdate.Vehicle.Label + ", delay: " + entity.TripUpdate.Delay); 
                     busIDs.Add(entity.Vehicle.Vehicle.Id);
                     busPositions.Add(entity.Vehicle.Position.Latitude + "," + entity.Vehicle.Position.Longitude);
                 }
@@ -210,7 +210,6 @@ namespace DRTApp
 
             foreach (string pos in busPositions) {
                 Debug.WriteLine("Bus " + (busPositions.IndexOf(pos) + 1) + ": " + pos);
-
             }
         }
     }
