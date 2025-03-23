@@ -191,7 +191,9 @@ namespace DRTApp.Classes
 
             if (stopTimes.Count == 0) return trips;
 
-            stopTimes = stopTimes.OrderBy(st => DateTime.Parse(st.arrivalTime)).ToList();
+            try { stopTimes = stopTimes.OrderBy(st => DateTime.Parse(st.arrivalTime)).ToList(); }
+            catch { Debug.WriteLine($"Unable to parse datetime from stop time"); }
+            
             if (stopTimes.Count > 3) {
                 for (int i = 0; i < 3; i++) {
                     Trip trip = GetTrip(stopTimes[i].tripID);

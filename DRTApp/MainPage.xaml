@@ -18,25 +18,35 @@
             <Label
                 Text="Welcome to the Durham Region Transit bus tracking!"
                 Style="{StaticResource Headline}"
+                TextColor="Black"
                 SemanticProperties.HeadingLevel="Level1" />
 
             <Label
                 Text="Please enter your bus stop number."
                 Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+                TextColor="Black"
+                SemanticProperties.HeadingLevel="Level2"/>
 
-            <Entry
-                x:Name="myEntry"
-                Placeholder="Enter text here"
-                Text=""
-                Margin="10"/>
-                            
+            <Border>
+                <VerticalStackLayout>
+                    <Entry
+                       x:Name="StopIDEntry"
+                       Placeholder="Enter stop number here"
+                       TextColor="Black"
+                       Text=""
+                       Margin="10"/>
+                </VerticalStackLayout>
+     
+            </Border>
+            
+            
+
+                           
             <Button
-                x:Name="CounterBtn"
-                Text="Click me" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
+                x:Name="MapGeneratorButton"
+                Text="Click here to generate a map for your stop!" 
+                SemanticProperties.Hint="Generates map."
+                Clicked="OnMapGeneratorClicked"
                 HorizontalOptions="Fill" />
         </VerticalStackLayout>
     </ScrollView>

@@ -19,20 +19,25 @@ namespace DRTApp
 
         public MainPage() {
             InitializeComponent();
+
+            // Initial validate call to trigger instnatiation
+            ValidateStopID(StopIDEntry.Text);
         }
 
-        private async void OnCounterClicked(object sender, EventArgs e) {
-            string stopID = myEntry.Text;
+        private async void OnMapGeneratorClicked(object sender, EventArgs e) {
+            string stopID = StopIDEntry.Text;
             if (ValidateStopID(stopID)) {
                 stop = GetStop(stopID);
                 stopTime = GetStopTime(stopID);
                 trip = GetTrip(stopTime.tripID);
+                GetIncomingTripsLive();
+                await Navigation.PushAsync(new MapPage(stop, busPositions));
             }
 
             Debug.WriteLine($"{stop.stopName} - Arriving at: {stopTime.arrivalTime} - Travelling to: {trip.tripHeadsign}");
 
 
-            GetIncomingTripsLive();
+
 
         }
 

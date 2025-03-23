@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Hackathon\\2025-DRTHackathon\\DRTApp\\DRTApp.csproj": {}
+    "D:\\DurhamCollege\\Hackathon\\DRTFinal\\DRTApp\\DRTApp.csproj": {}
   },
   "projects": {
-    "C:\\Hackathon\\2025-DRTHackathon\\DRTApp\\DRTApp.csproj": {
+    "D:\\DurhamCollege\\Hackathon\\DRTFinal\\DRTApp\\DRTApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Hackathon\\2025-DRTHackathon\\DRTApp\\DRTApp.csproj",
+        "projectUniqueName": "D:\\DurhamCollege\\Hackathon\\DRTFinal\\DRTApp\\DRTApp.csproj",
         "projectName": "DRTApp",
-        "projectPath": "C:\\Hackathon\\2025-DRTHackathon\\DRTApp\\DRTApp.csproj",
-        "packagesPath": "C:\\Users\\mikem\\.nuget\\packages\\",
-        "outputPath": "C:\\Hackathon\\2025-DRTHackathon\\DRTApp\\obj\\",
+        "projectPath": "D:\\DurhamCollege\\Hackathon\\DRTFinal\\DRTApp\\DRTApp.csproj",
+        "packagesPath": "C:\\Users\\brady\\.nuget\\packages\\",
+        "outputPath": "D:\\DurhamCollege\\Hackathon\\DRTFInal\\DRTApp\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\mikem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\brady\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -59,7 +59,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
         "SdkAnalysisLevel": "9.0.100"
       },
@@ -139,7 +139,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         },
         "net8.0-ios18.0": {
           "targetAlias": "net8.0-ios",
@@ -189,11 +189,11 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.iOS.Ref.net8.0_18.0",
-              "version": "[18.0.8314, 18.0.8314]"
+              "version": "[18.0.8316, 18.0.8316]"
             },
             {
               "name": "Microsoft.iOS.Runtime.iossimulator-x64.net8.0_18.0",
-              "version": "[18.0.8314, 18.0.8314]"
+              "version": "[18.0.8316, 18.0.8316]"
             }
           ],
           "frameworkReferences": {
@@ -204,7 +204,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         },
         "net8.0-maccatalyst18.0": {
           "targetAlias": "net8.0-maccatalyst",
@@ -255,11 +255,11 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.MacCatalyst.Ref.net8.0_18.0",
-              "version": "[18.0.8314, 18.0.8314]"
+              "version": "[18.0.8316, 18.0.8316]"
             },
             {
               "name": "Microsoft.MacCatalyst.Runtime.maccatalyst-x64.net8.0_18.0",
-              "version": "[18.0.8314, 18.0.8314]"
+              "version": "[18.0.8316, 18.0.8316]"
             }
           ],
           "frameworkReferences": {
@@ -270,7 +270,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         },
         "net8.0-windows10.0.19041": {
           "targetAlias": "net8.0-windows10.0.19041.0",
@@ -325,7 +325,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
