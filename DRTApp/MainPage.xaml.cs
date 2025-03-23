@@ -187,12 +187,12 @@ namespace DRTApp
             FeedMessage tripsFeed = Serializer.Deserialize<FeedMessage>(tripsReq.GetResponse().GetResponseStream());
             foreach (FeedEntity entity in tripsFeed.Entities)
             {
-                Debug.WriteLine("Accessing entity...");
-                Debug.WriteLine("Entity details: " +
-                    entity.ToString() + " | " +
-                    entity.Id + " | " +
-                    "Vehicle: " + entity.Vehicle.Vehicle.Id //+ "|" + entity.Vehicle.Vehicle.Label
-                );
+                //Debug.WriteLine("Accessing entity...");
+                //Debug.WriteLine("Entity details: " +
+                //    entity.ToString() + " | " +
+                //    entity.Id + " | " +
+                //    "Vehicle: " + entity.Vehicle.Vehicle.Id //+ "|" + entity.Vehicle.Vehicle.Label
+                //);
 
                 if (incomingTripIds.Contains(entity.Vehicle.Trip.TripId)) {
                     // needs separate trip_update http call
@@ -206,6 +206,8 @@ namespace DRTApp
             {
                 lblIncomingBusses.Text = "No busses are inbound for stop " + myEntry.Text;
                 return;
+            } else {
+                lblIncomingBusses.Text = "Incoming busses found for stop " + myEntry.Text;
             }
 
             foreach (string pos in busPositions) {
