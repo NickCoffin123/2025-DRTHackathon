@@ -1,78 +1,157 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Net;
 using ProtoBuf;
 using TransitRealtime;
+using Microsoft.Maui.Controls;
 using DRTApp.Classes;
 
 namespace DRTApp
 {
     public partial class MainPage : ContentPage {
+
         //CONSTS
         string TRIP_UPDATES_URL = "https://drtonline.durhamregiontransit.com/gtfsrealtime/TripUpdates";
         string VEHICLE_POSITIONS_URL = "https://drtonline.durhamregiontransit.com/gtfsrealtime/VehiclePositions";
+        
         // COMPONENTS
-        RawResourceHandler res;
+        RawResourceHandler res = RawResourceHandler.Instance;
+        Timer _timer;
+
+        // VARS
+        int tickInterval = 3000;
+
+        float hdrHeightPercent = .075f;
+        float mapHeightPercent = .5f;
+        float inputWidthPercent = .80f;
+
         sStop stop;
-        StopTime stopTime;
         Trip trip;
+
+        List<string> busIDs = new();
         List<string> busPositions = new();
 
+        // CONSTRUCTOR
         public MainPage() {
             InitializeComponent();
+            InitializeTimer();
+        }
+
+        // ***********************************************
+        //                  TICKER
+        // ***********************************************
+        private void InitializeTimer()
+        {
+            // Create a new Timer with a callback that runs at every interval
+            _timer = new Timer(CallTick, null, 0, tickInterval);
+        }
+
+        protected void CallTick(object state)
+        {
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                OnTick();
+            });
+        }
+
+        // Cleanup
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            _timer?.Dispose(); // timer doesnt garbage collect
         }
 
         private async void OnCounterClicked(object sender, EventArgs e) {
             string stopID = myEntry.Text;
-            if (ValidateStopID(stopID)) {
-                stop = GetStop(stopID);
-                stopTime = GetStopTime(stopID);
-                trip = GetTrip(stopTime.tripID);
+            if (res.ValidateStopID(stopID)) {
+                stop = res.GetStop(stopID);
+
+                GetIncomingTripsLive();
             }
 
-            Debug.WriteLine($"{stop.stopName} - Arriving at: {stopTime.arrivalTime} - Travelling to: {trip.tripHeadsign}");
-
-
-            GetIncomingTripsLive();
-
+            else
+            {
+                lblIncomingBusses.Text = "STOP NOT FOUND";
+            }
         }
 
-        private bool ValidateStopID(string stopID) {
-            List<sStop> stops = RawResourceHandler.Instance.Stops;
+        // ***If you want to add functionality call on tick events,
+        // add it here. Ticker was made to live update bus pos's.
+        private void OnTick()
+        {
+            if (busPositions.Count > 0)
+            {
+                foreach (string busID in busIDs)
+                {
 
-            foreach (sStop stop in stops) {
-                if (stop.stopID == stopID) {
-                    return true;
                 }
             }
 
-            return false;
         }
 
-        private sStop GetStop(string stopID) {
-            foreach (sStop stop in RawResourceHandler.Instance.Stops) {
-                if (stop.stopID == stopID) {
-                    return stop;
-                }
-            }
-            return new sStop();
+        // ***********************************************
+        //            DYNAMIC PAGE FORMATTING
+        // ***********************************************
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            SetDynamicHeights();
+            SetDynamicWidths();
         }
 
-        private StopTime GetStopTime(string stopID) {
-            foreach (StopTime stopTime in RawResourceHandler.Instance.StopTimes) {
-                if (stopTime.stopID == stopID) {
-                    return stopTime;
-                }
-            }
-            return new StopTime();
+        // Event handler for when the window size changes
+        private void OnSizeChanged(object sender, EventArgs e)
+        {
+            SetDynamicHeights();
+            SetDynamicWidths();
         }
 
-        private Trip GetTrip(string tripID) {
-            foreach (Trip trip in RawResourceHandler.Instance.Trips) {
-                if (trip.tripID == tripID) {
-                    return trip;
+        private void SetDynamicHeights()
+        {
+            // Get the screen height
+            double pageHeight = this.Height;
+
+            // Calculate the desired heights based on percentages of the screen height
+            double firstFrameHeight = pageHeight * hdrHeightPercent; // 15% of screen height
+            double secondFrameHeight = pageHeight * mapHeightPercent; // 40% of screen height
+
+            // Set the HeightRequest for each frame
+            hdr.HeightRequest = firstFrameHeight;
+            map.HeightRequest = secondFrameHeight;
+        }
+
+        private void SetDynamicWidths()
+        {
+            double pageWidth = this.Width;
+
+            // Set the WidthRequest for both controls
+            myEntry.WidthRequest = pageWidth * inputWidthPercent;
+            CounterBtn.WidthRequest = pageWidth * inputWidthPercent;
+            lblIncomingBusses.WidthRequest = pageWidth * inputWidthPercent;
+        }
+
+        // ***********************************************
+        //                  MISC
+        // ***********************************************
+        private void UpdateBusPositions()
+        {
+            List<string> newPositions = new();
+            foreach (string busID in busIDs)
+            {
+                // Vehicles HTTP request
+                Debug.WriteLine("Making Vehicles HTTP request...");
+                WebRequest vReq = HttpWebRequest.Create(VEHICLE_POSITIONS_URL);
+                FeedMessage vFeed = Serializer.Deserialize<FeedMessage>(vReq.GetResponse().GetResponseStream());
+                foreach (FeedEntity entity in vFeed.Entities)
+                {
+                    if (busIDs.Contains(entity.Vehicle.Vehicle.Id))
+                    {
+                        newPositions.Add(entity.Vehicle.Position.Latitude + "," + entity.Vehicle.Position.Longitude);
+                    }
                 }
             }
-            return new Trip();
+
+            busPositions = newPositions;
         }
 
         private void GetIncomingTripsLive() {
@@ -81,23 +160,36 @@ namespace DRTApp
             List<Trip> incomingTrips = RawResourceHandler.Instance.GetNextThreeTripsByStopID(stop.stopID);
             List<string> incomingTripIds = new();
 
-            if (incomingTrips.Count == 0) {
-                Debug.WriteLine("No incoming busses");
-                return;
-            }
-
             foreach (Trip trip in incomingTrips) {
                 Debug.WriteLine("Incoming trip: " + trip.tripID);
                 incomingTripIds.Add(trip.tripID);
             }
 
-            WebRequest req = HttpWebRequest.Create(VEHICLE_POSITIONS_URL);
-            FeedMessage feed = Serializer.Deserialize<FeedMessage>(req.GetResponse().GetResponseStream());
-            foreach (FeedEntity entity in feed.Entities) {
-                if (incomingTripIds.Contains(entity.Vehicle.Trip.TripId)) {
-                    Debug.WriteLine("Matching trip found! : " + entity.Vehicle.Vehicle.Label);
+            // Trips HTTP request
+            Debug.WriteLine("Making Trips HTTP request...");
+            WebRequest tripsReq = HttpWebRequest.Create(TRIP_UPDATES_URL);
+            FeedMessage tripsFeed = Serializer.Deserialize<FeedMessage>(tripsReq.GetResponse().GetResponseStream());
+            foreach (FeedEntity entity in tripsFeed.Entities)
+            {
+                Debug.WriteLine("Accessing entity...");
+                Debug.WriteLine("Entity details: " +
+                    entity.ToString() + " | " +
+                    entity.Id + " | " +
+                    "Vehicle: " + entity.Vehicle //+ "|" + entity.Vehicle.Vehicle.Label
+                );
+
+                if (incomingTripIds.Contains(entity.Id))
+                {
+                    Debug.WriteLine("Incoming Bus: " + entity.TripUpdate.Vehicle.Label + ", delay: " + entity.TripUpdate.Delay);
+                    busIDs.Add(entity.Vehicle.Vehicle.Id);
                     busPositions.Add(entity.Vehicle.Position.Latitude + "," + entity.Vehicle.Position.Longitude);
                 }
+            }
+
+            if (busPositions.Count <= 0)
+            {
+                lblIncomingBusses.Text = "No busses are inbound for stop " + myEntry.Text;
+                return;
             }
 
             foreach (string pos in busPositions) {

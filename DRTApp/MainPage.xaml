@@ -2,6 +2,91 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DRTApp.MainPage"
+             SizeChanged="OnSizeChanged"
+             BackgroundColor="#0B8261">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="0,0"
+            Spacing="0">
+
+            <Frame x:Name="hdr"
+                BorderColor="White"
+                BackgroundColor="White"
+                Padding="0"
+                Margin="0,0,0,0"
+                CornerRadius="0">
+                <Image
+                    Source="drt.png"
+                    Aspect="AspectFit"
+                    SemanticProperties.Description="DRT Logo" />
+            </Frame>
+
+            <Frame x:Name="map"
+                BorderColor="White"
+                BackgroundColor="White"
+                Padding="10"
+                Margin="0,0,0,25"
+                CornerRadius="0">
+                <Image
+                    Source="fakemap.png"
+                    Aspect="AspectFit"
+                    SemanticProperties.Description="Fake map" />
+            </Frame>
+
+            <StackLayout Spacing="10">
+                <Label x:Name="lblWelcome"
+                    Text="Welcome to the Durham Region Transit bus tracking!"
+                    Style="{StaticResource Headline}"
+                    FontSize="14"
+                    TextColor="White"
+                    SemanticProperties.HeadingLevel="Level1" 
+                    Padding="30,0,30,0"/>
+
+                <Label x:Name="lblPlsEnter"
+                    Text="Please enter your bus stop number."
+                    Style="{StaticResource SubHeadline}"
+                    FontSize="12"
+                    TextColor="White"
+                    SemanticProperties.HeadingLevel="Level2"
+                    SemanticProperties.Description="Welcome to dot net Multi platform App U I" 
+                    Padding="30,0,30,0"/>
+                
+                <Entry x:Name="myEntry"
+                    Placeholder="Enter text here"
+                    Text=""
+                    Margin="10"
+                    FontSize="16"
+                    TextColor="Black"
+                    PlaceholderColor="Gray"
+                    BackgroundColor="White"/>
+
+                <Button x:Name="CounterBtn"
+                    Text="GET NEXT BUS" 
+                    BackgroundColor="#3E2B2F"
+                    TextColor="White"
+                    Clicked="OnCounterClicked"
+                    HorizontalOptions="Fill"/>
+                    
+                <Label x:Name="lblIncomingBusses"
+                    Text=""
+                    TextColor="White"
+                    BackgroundColor="Transparent"
+                    LineBreakMode="WordWrap"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Fill"
+                    MaxLines="5"/>
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
+
+<!--
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DRTApp.MainPage"
              BackgroundColor="White"
              >
 
@@ -30,7 +115,12 @@
                 x:Name="myEntry"
                 Placeholder="Enter text here"
                 Text=""
-                Margin="10"/>
+                Margin="10"
+                FontSize="16"
+                TextColor="Black"
+                PlaceholderColor="Gray"
+                BackgroundColor="White"
+                HeightRequest="40"/>
                             
             <Button
                 x:Name="CounterBtn"
@@ -42,3 +132,4 @@
     </ScrollView>
 
 </ContentPage>
+-->

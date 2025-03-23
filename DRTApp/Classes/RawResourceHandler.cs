@@ -47,8 +47,6 @@ namespace DRTApp.Classes
         private static string STOP_TIMES = "Resources\\raw\\stop_times.txt";
         private static string TRIPS = "Resources\\raw\\trips.txt";
 
-       
-
         // PROPS
         public List<sStop> Stops { get; set; }
         public List<StopTime> StopTimes { get; set; }
@@ -58,6 +56,9 @@ namespace DRTApp.Classes
         private static RawResourceHandler _instance;
         public static RawResourceHandler Instance => _instance ??= new RawResourceHandler();
 
+        // ***********************************************
+        //                  CONSTRUCTION
+        // ***********************************************
         private RawResourceHandler()
         {
             Stops = new();
@@ -154,17 +155,116 @@ namespace DRTApp.Classes
             }
         }
 
-        private Trip GetTrip(string tripID)
+        // ***********************************************
+        //                      MISC
+        // ***********************************************
+        public float GetSafeTimeParsed(string time)
+        {
+            // Split the string by ':'
+            string[] timeParts = time.Split(':');
+
+            // Convert to floats
+            float hours = float.Parse(timeParts[0]);
+            float minutes = float.Parse(timeParts[1]);
+            float seconds = float.Parse(timeParts[2]);
+
+            float outTime = .0f;
+
+            if (hours < 2)
+            {
+                outTime += 3600 * 24;
+            }
+
+            outTime += hours * 3600;
+            outTime += minutes * 60;
+            outTime += seconds;
+
+            return outTime;
+        }
+
+        public bool IsTimeInFuture(string time)
+        {
+            string nowStr = DateTime.Now.ToString("HH:mm:ss");
+            float fnow = GetSafeTimeParsed(nowStr);
+            float ftime = GetSafeTimeParsed(time);
+
+            return fnow < ftime;
+        }
+
+        // ***********************************************
+        //                  STOPS
+        // ***********************************************
+        public sStop GetStop(string stopID)
+        {
+            foreach (sStop stop in Stops)
+            {
+                if (stop.stopID == stopID)
+                {
+
+                    //Debug.WriteLine(stop.stopID);
+                    return stop;
+                }
+            }
+
+            sStop nullS = new sStop();
+            nullS.stopID = "FAILED";
+
+            return nullS;
+        }
+
+        public bool ValidateStopID(string stopID)
+        {
+            foreach (sStop stop in Stops)
+            {
+                if (stop.stopID == stopID)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        // ***********************************************
+        //                  STOP TIMES
+        // ***********************************************
+        public List<StopTime> GetStopTimes(string stopID, string tripID)
+        {
+            List<StopTime> times = new();
+
+            foreach (StopTime st in StopTimes)
+            {
+                if (st.stopID == stopID && st.tripID == tripID)
+                {
+
+                    //Debug.WriteLine(st.tripID + " | " + st.stopID);
+                    times.Add(st);
+                }
+            }
+
+            return times;
+        }
+
+
+        // ***********************************************
+        //                  TRIPS
+        // ***********************************************
+        public Trip GetTrip(string tripID)
         {
             foreach (Trip trip in Trips)
             {
                 if (trip.tripID == tripID)
                 {
+
+                    //Debug.WriteLine(trip.tripID);
                     return trip;
                 }
             }
 
-            return new Trip();
+            Trip nullT = new Trip();
+            nullT.tripID = "FAILED";
+
+            return nullT;
         }
 
         public List<Trip> GetNextThreeTripsByStopID(string stopID) {
@@ -173,44 +273,20 @@ namespace DRTApp.Classes
             List<Trip> trips = new();
 
 
-            foreach (StopTime stopTime in StopTimes) {
-                if (stopTime.stopID == stopID) {
-                    string[] timeParts = stopTime.arrivalTime.Split(":");
-                    if (int.Parse(timeParts[0]) > 23) timeParts[0] = (int.Parse(timeParts[0]) - 24).ToString();
-                    string hoursMinutes = timeParts[0] + ":" + timeParts[1];
-
-                    DateTime targetTime = DateTime.Today.Add(TimeSpan.Parse(hoursMinutes));
-                    //Debug.WriteLine("Arrival time: " + targetTime + ", Now: " + time);
-                    bool future = targetTime > time;
-                    //Debug.WriteLine("Future: " + future);
-
-                    if (!future) continue;
-                    else stopTimes.Add(stopTime);
+            foreach (StopTime st in StopTimes) {
+                if (st.stopID == stopID) {
+                    if (IsTimeInFuture(st.arrivalTime)) stopTimes.Add(st);
+                    else continue;
                 }
             }
 
-            if (stopTimes.Count == 0) return trips;
-
-            stopTimes = stopTimes.OrderBy(st => DateTime.Parse(st.arrivalTime)).ToList();
-            if (stopTimes.Count > 3) {
-                for (int i = 0; i < 3; i++) {
-                    Trip trip = GetTrip(stopTimes[i].tripID);
-                    if (trip.tripID != null) trips.Add(trip);
-                }
-            }
-            else {
-                foreach (StopTime stopTime in stopTimes) {
-                    Trip trip = GetTrip(stopTime.tripID);
-                    if (trip.tripID != null) trips.Add(trip);
-                }
-
+            stopTimes = stopTimes.OrderBy(st => GetSafeTimeParsed(st.arrivalTime)).ToList();
+            for (int i = 0; i < 3; i++) {
+                Trip trip = GetTrip(stopTimes[i].tripID);
+                if (trip.tripID != "FAILED") trips.Add(trip);
             }
 
-            //foreach (Trip trip in trips) {
-            //    Debug.WriteLine($"{trip.tripID} - {trip.tripHeadsign}");
-            //}
             return trips;
-
         }
 
     }
