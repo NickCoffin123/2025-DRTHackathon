@@ -1,12 +1,12 @@
-DRT Bus Tracker
+DRT Bus Tracker  
 By:
-    Robert (RJ) Macklem
-    Nicholas Coffin
-    Mike Melchior
-    Brady Inglis
-
-Submission for the Durham College SEIT Hackathon 2025
-Submitted to https://devpost.com/software/drt-bus-tracker
+    - Robert (RJ) Macklem
+    - Nicholas Coffin
+    - Mike Melchior
+    - Brady Inglis
+  
+Submission for the Durham College SEIT Hackathon 2025  
+Submitted to https://devpost.com/software/drt-bus-tracker  
 
 # Inspiration
 Mentioned in the opening ceremony was a huge screen with live bus positions. Why not put that power into user's hands? A simple interface to get bus locations and delays relevant to the stop you are waiting at seemed like an intuitive and approachable project.
